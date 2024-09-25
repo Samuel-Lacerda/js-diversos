@@ -17,24 +17,30 @@ function Produto(nome, categoria, preco) {
         },
 
         preco: {
-            get(){
-                return this.preco
-            },
-
-            set(novoPreco){
-                if(novoPreco < 0){
-                    console.log('Valor inválido. Não pode ser menor do que 0.')
+            get() {
+                if (this._preco >= 0){
+                    return this._preco;
+                } else {
+                    console.log('Valor inválido, o preço não pode ser menor que 0.');
                 }
-                this.preco = novoPreco
             },
-
+            set(valor) {
+                if (valor >= 0) {
+                    this._preco = valor;
+                } else {
+                    console.log('Valor inválido, o preço não pode ser menor que 0.');
+                }
+            },
             enumerable: true,
-            configurable: true
+            configurable: false
         }
     })
+    
+    this._preco = preco
+
 }
 
-const produto = new Produto('Notebook','Computadores', 2000)
+const produto = new Produto('Notebook', 'Computadores', -2000)
 console.log(produto.nome)
 console.log(produto.categoria)
 console.log(produto.preco)
