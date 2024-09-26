@@ -1,7 +1,11 @@
 // Utilizando Getters e Setters em Função Construtora
 
 function Pessoa(nome, idade) {
-    this.nome = nome
+    Object.defineProperty(this, nome, {
+        get(){
+            
+        }
+    })
 
     Object.defineProperty(this, idade, {
         get() {
