@@ -1,0 +1,2 @@
+Esse vai ser o novo conteúdo do arquivo!
+Aproveitei pra testar a quebra de linha com o Enter. hehehe
